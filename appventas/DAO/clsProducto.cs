@@ -3,96 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using appventas.MODEL;
 
 namespace appventas.DAO
 {
-    class clsProducto
+    class ClsProducto
     {
-        public List<tb_producto> cargarDatos()
-
+        public List<tb_producto> cargarProductosFiltro(String filtro)
         {
-            List<tb_producto> list;
+            List<tb_producto> List;
 
-            using (sistema_ventasEntities db = new sistema_ventasEntities())
+            using (sistema_ventasEntities bd = new sistema_ventasEntities())
             {
-                list = db.tb_producto.ToList();
-
-
+                List = (from listadoProductos in bd.tb_producto
+                        where listadoProductos.nombreProducto.Contains(filtro)
+                        select listadoProductos).ToList();
             }
 
-            return list;
+            return List;
         }
 
-        public void guardarDatos(tb_producto prod)
+        public List<tb_producto> BuscarProducto(int codigo)
         {
-            try
+            List<tb_producto> tb_Productos = new List<tb_producto>();
+            using (sistema_ventasEntities bd = new sistema_ventasEntities())
             {
-                using (sistema_ventasEntities bd = new sistema_ventasEntities())
-                {
-
-                    tb_producto productList = new tb_producto();
-
-                    productList.nombreProducto = prod.nombreProducto;
-                    productList.precioProducto = prod.precioProducto;
-                    productList.estadoProducto = prod.estadoProducto;
-
-                    bd.tb_producto.Add(productList);
-                    bd.SaveChanges();
-                }
-
+                tb_Productos = (from listadoProductos in bd.tb_producto
+                                where listadoProductos.nombreProducto.Contains(Convert.ToString(codigo))
+                                select listadoProductos).ToList();
             }
-            catch (Exception ex)
-            {
 
-            }
-        }
-
-        public void eliminarDatos(int id)
-        {
-            try
-            {
-                using (sistema_ventasEntities bd = new sistema_ventasEntities())
-                {
-                    int elim = Convert.ToInt32(id);
-                    tb_producto produtList = bd.tb_producto.Where(p => p.idProducto == elim).Select(p => p).FirstOrDefault();
-
-
-                    bd.tb_producto.Remove(produtList);
-                    bd.SaveChanges();
-
-
-                }
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
-
-        public void actualizarDato(tb_producto producto)
-        {
-            try
-            {
-
-
-                using (sistema_ventasEntities bd = new sistema_ventasEntities())
-                {
-
-                    int act = Convert.ToInt32(producto.idProducto);
-                    tb_producto productList = bd.tb_producto.Where(a => a.idProducto == act).Select(a => a).FirstOrDefault();
-
-                    productList.nombreProducto = producto.nombreProducto;
-                    productList.precioProducto = producto.precioProducto;
-                    productList.estadoProducto = producto.estadoProducto;
-                    bd.SaveChanges();
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-            }
+            return tb_Productos;
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 namespace appventas.VISTA
 {
-    partial class frmMenú
+    partial class FrmMenú
     {
         /// <summary>
         /// Required designer variable.
@@ -29,29 +29,20 @@ namespace appventas.VISTA
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.documentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarClienteNuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarUsuarioNuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.documentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tablaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarUnNuevoProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tablaDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(13, 192);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(849, 33);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Menú para poder acceder a los distintos fromularios de datos dentro de appventas";
             // 
             // menuStrip1
             // 
@@ -76,6 +67,13 @@ namespace appventas.VISTA
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             this.clienteToolStripMenuItem.Size = new System.Drawing.Size(81, 29);
             this.clienteToolStripMenuItem.Text = "Cliente";
+            this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
+            // 
+            // agregarClienteNuevoToolStripMenuItem
+            // 
+            this.agregarClienteNuevoToolStripMenuItem.Name = "agregarClienteNuevoToolStripMenuItem";
+            this.agregarClienteNuevoToolStripMenuItem.Size = new System.Drawing.Size(287, 34);
+            this.agregarClienteNuevoToolStripMenuItem.Text = "Agregar cliente nuevo";
             // 
             // usuarioToolStripMenuItem
             // 
@@ -84,6 +82,13 @@ namespace appventas.VISTA
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
             this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(88, 29);
             this.usuarioToolStripMenuItem.Text = "Usuario";
+            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
+            // 
+            // agregarUsuarioNuevoToolStripMenuItem
+            // 
+            this.agregarUsuarioNuevoToolStripMenuItem.Name = "agregarUsuarioNuevoToolStripMenuItem";
+            this.agregarUsuarioNuevoToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
+            this.agregarUsuarioNuevoToolStripMenuItem.Text = "Agregar usuario nuevo";
             // 
             // documentoToolStripMenuItem
             // 
@@ -92,6 +97,14 @@ namespace appventas.VISTA
             this.documentoToolStripMenuItem.Name = "documentoToolStripMenuItem";
             this.documentoToolStripMenuItem.Size = new System.Drawing.Size(122, 29);
             this.documentoToolStripMenuItem.Text = "Documento";
+            this.documentoToolStripMenuItem.Click += new System.EventHandler(this.documentoToolStripMenuItem_Click);
+            // 
+            // tablaToolStripMenuItem
+            // 
+            this.tablaToolStripMenuItem.Name = "tablaToolStripMenuItem";
+            this.tablaToolStripMenuItem.Size = new System.Drawing.Size(284, 34);
+            this.tablaToolStripMenuItem.Text = "Tabla de documentos";
+            this.tablaToolStripMenuItem.Click += new System.EventHandler(this.tablaToolStripMenuItem_Click);
             // 
             // productoToolStripMenuItem
             // 
@@ -100,6 +113,14 @@ namespace appventas.VISTA
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
             this.productoToolStripMenuItem.Size = new System.Drawing.Size(101, 29);
             this.productoToolStripMenuItem.Text = "Producto";
+            this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
+            // 
+            // agregarUnNuevoProductoToolStripMenuItem
+            // 
+            this.agregarUnNuevoProductoToolStripMenuItem.Name = "agregarUnNuevoProductoToolStripMenuItem";
+            this.agregarUnNuevoProductoToolStripMenuItem.Size = new System.Drawing.Size(336, 34);
+            this.agregarUnNuevoProductoToolStripMenuItem.Text = "Agregar un nuevo producto";
+            this.agregarUnNuevoProductoToolStripMenuItem.Click += new System.EventHandler(this.agregarUnNuevoProductoToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 
@@ -109,46 +130,31 @@ namespace appventas.VISTA
             this.ventasToolStripMenuItem.Size = new System.Drawing.Size(80, 29);
             this.ventasToolStripMenuItem.Text = "Ventas";
             // 
-            // agregarClienteNuevoToolStripMenuItem
-            // 
-            this.agregarClienteNuevoToolStripMenuItem.Name = "agregarClienteNuevoToolStripMenuItem";
-            this.agregarClienteNuevoToolStripMenuItem.Size = new System.Drawing.Size(287, 34);
-            this.agregarClienteNuevoToolStripMenuItem.Text = "Agregar cliente nuevo";
-            // 
-            // agregarUsuarioNuevoToolStripMenuItem
-            // 
-            this.agregarUsuarioNuevoToolStripMenuItem.Name = "agregarUsuarioNuevoToolStripMenuItem";
-            this.agregarUsuarioNuevoToolStripMenuItem.Size = new System.Drawing.Size(295, 34);
-            this.agregarUsuarioNuevoToolStripMenuItem.Text = "Agregar usuario nuevo";
-            // 
-            // tablaToolStripMenuItem
-            // 
-            this.tablaToolStripMenuItem.Name = "tablaToolStripMenuItem";
-            this.tablaToolStripMenuItem.Size = new System.Drawing.Size(284, 34);
-            this.tablaToolStripMenuItem.Text = "Tabla de documentos";
-            this.tablaToolStripMenuItem.Click += new System.EventHandler(this.tablaToolStripMenuItem_Click);
-            // 
-            // agregarUnNuevoProductoToolStripMenuItem
-            // 
-            this.agregarUnNuevoProductoToolStripMenuItem.Name = "agregarUnNuevoProductoToolStripMenuItem";
-            this.agregarUnNuevoProductoToolStripMenuItem.Size = new System.Drawing.Size(336, 34);
-            this.agregarUnNuevoProductoToolStripMenuItem.Text = "Agregar un nuevo producto";
-            // 
             // tablaDeVentasToolStripMenuItem
             // 
             this.tablaDeVentasToolStripMenuItem.Name = "tablaDeVentasToolStripMenuItem";
-            this.tablaDeVentasToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.tablaDeVentasToolStripMenuItem.Text = "Tabla de ventas";
+            this.tablaDeVentasToolStripMenuItem.Size = new System.Drawing.Size(153, 34);
+            this.tablaDeVentasToolStripMenuItem.Text = "Abrir";
+            this.tablaDeVentasToolStripMenuItem.Click += new System.EventHandler(this.tablaDeVentasToolStripMenuItem_Click);
             // 
-            // frmMenú
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(795, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 20);
+            this.label1.TabIndex = 2;
+            // 
+            // FrmMenú
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 452);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "frmMenú";
+            this.Name = "FrmMenú";
             this.Text = "Menú";
             this.Load += new System.EventHandler(this.frmMenú_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -159,8 +165,6 @@ namespace appventas.VISTA
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarClienteNuevoToolStripMenuItem;
@@ -172,5 +176,6 @@ namespace appventas.VISTA
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarUnNuevoProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tablaDeVentasToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
     }
 }

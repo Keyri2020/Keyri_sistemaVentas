@@ -6,7 +6,6 @@ C:\Users\keyri\OneDrive\Documentos\Visual Studio 2019\appventas\bin\Debug\Entity
 C:\Users\keyri\OneDrive\Documentos\Visual Studio 2019\appventas\bin\Debug\EntityFramework.xml
 C:\Users\keyri\OneDrive\Documentos\Visual Studio 2019\appventas\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\keyri\OneDrive\Documentos\Visual Studio 2019\appventas\obj\Debug\appventas.csprojAssemblyReference.cache
-C:\Users\keyri\OneDrive\Documentos\Visual Studio 2019\appventas\obj\Debug\appventas.Form1.resources
 C:\Users\keyri\OneDrive\Documentos\Visual Studio 2019\appventas\obj\Debug\appventas.Properties.Resources.resources
 C:\Users\keyri\OneDrive\Documentos\Visual Studio 2019\appventas\obj\Debug\appventas.csproj.GenerateResource.cache
 C:\Users\keyri\OneDrive\Documentos\Visual Studio 2019\appventas\obj\Debug\appventas.csproj.CoreCompileInputs.cache
@@ -17,3 +16,6 @@ C:\Users\keyri\OneDrive\Documentos\Visual Studio 2019\appventas\obj\Debug\appven
 C:\Users\keyri\OneDrive\Documentos\Visual Studio 2019\appventas\obj\Debug\appventas.VISTA.frmCliente.resources
 C:\Users\keyri\OneDrive\Documentos\Visual Studio 2019\appventas\obj\Debug\appventas.VISTA.frmDocumento.resources
 C:\Users\keyri\OneDrive\Documentos\Visual Studio 2019\appventas\obj\Debug\appventas.VISTA.frmProducto.resources
+C:\Users\keyri\OneDrive\Documentos\Visual Studio 2019\appventas\obj\Debug\appventas.frmUsuario.resources
+C:\Users\keyri\OneDrive\Documentos\Visual Studio 2019\appventas\obj\Debug\appventas.VISTA.frmMenú.resources
+C:\Users\keyri\OneDrive\Documentos\Visual Studio 2019\appventas\obj\Debug\appventas.VISTA.frmUsuario.resources

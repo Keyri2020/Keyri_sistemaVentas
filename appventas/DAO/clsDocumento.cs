@@ -4,24 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using appventas.MODEL;
+using System.Windows.Forms;
 
 namespace appventas.DAO
 {
-    class clsDocumento
+    class ClsDocumento
     {
-        public List<tb_documento> cargarList()
-
+        public List<tb_documento> cargarComboDocument()
         {
-            List<tb_documento> listDocument;
+            List<tb_documento> List;
 
             using (sistema_ventasEntities bd = new sistema_ventasEntities())
             {
-                listDocument = bd.tb_documento.ToList();
-
-
+                List = bd.tb_documento.ToList();
             }
 
-            return listDocument;
+            return List;
         }
 
         public void guardarDatos(tb_documento client)
@@ -37,11 +35,13 @@ namespace appventas.DAO
 
                     bd.tb_documento.Add(lista);
                     bd.SaveChanges();
+
+                    MessageBox.Show("Guardado");
                 }
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -58,12 +58,12 @@ namespace appventas.DAO
                     bd.tb_documento.Remove(list);
                     bd.SaveChanges();
 
-
+                    MessageBox.Show("Eliminado");
                 }
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -82,12 +82,14 @@ namespace appventas.DAO
                     lista.nombreDocumento = lista.nombreDocumento;
 
                     bd.SaveChanges();
+
+                    MessageBox.Show("Actualizado");
                 }
 
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.ToString());
             }
         }
 

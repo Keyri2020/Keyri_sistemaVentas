@@ -55,11 +55,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\clsAcceso.cs" />
-    <Compile Include="DAO\clsCliente.cs" />
-    <Compile Include="DAO\clsDocumento.cs" />
-    <Compile Include="DAO\clsProducto.cs" />
-    <Compile Include="DAO\clsUsuario.cs" />
+    <Compile Include="DAO\ClsAcceso.cs" />
+    <Compile Include="DAO\ClsCliente.cs" />
+    <Compile Include="DAO\ClsDDetalle.cs" />
+    <Compile Include="DAO\ClsDocumento.cs" />
+    <Compile Include="DAO\ClsDVenta.cs" />
+    <Compile Include="DAO\ClsProducto.cs" />
+    <Compile Include="DAO\ClsUsuario.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,11 +118,11 @@
     <Compile Include="VISTA\frmDocumento.Designer.cs">
       <DependentUpon>frmDocumento.cs</DependentUpon>
     </Compile>
-    <Compile Include="VISTA\frmMenú.cs">
+    <Compile Include="VISTA\FrmMenú.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VISTA\frmMenú.Designer.cs">
-      <DependentUpon>frmMenú.cs</DependentUpon>
+    <Compile Include="VISTA\FrmMenú.Designer.cs">
+      <DependentUpon>FrmMenú.cs</DependentUpon>
     </Compile>
     <Compile Include="VISTA\frmProducto.cs">
       <SubType>Form</SubType>
@@ -158,8 +160,8 @@
     <EmbeddedResource Include="VISTA\frmDocumento.resx">
       <DependentUpon>frmDocumento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VISTA\frmMenú.resx">
-      <DependentUpon>frmMenú.cs</DependentUpon>
+    <EmbeddedResource Include="VISTA\FrmMenú.resx">
+      <DependentUpon>FrmMenú.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VISTA\frmProducto.resx">
       <DependentUpon>frmProducto.cs</DependentUpon>

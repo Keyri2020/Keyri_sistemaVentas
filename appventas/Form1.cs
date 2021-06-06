@@ -21,7 +21,7 @@ namespace appventas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            clsAcceso acce = new clsAcceso();
+            ClsAcceso acce = new ClsAcceso();
 
             int valor = acce.acceso(txtUser.Text, txtPass.Text);
 

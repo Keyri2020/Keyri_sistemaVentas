@@ -7,7 +7,7 @@ using appventas.MODEL;
 
 namespace appventas.DAO
 {
-    class clsAcceso
+    class ClsAcceso
     {
         public int acceso(String usuario, String Password)
         {

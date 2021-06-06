@@ -28,18 +28,14 @@ namespace appventas.VISTA
 
         void carga()
         {
-
             dgvCliente.Rows.Clear();
-            using (sistema_ventasEntities db = new sistema_ventasEntities())
+            ClsCliente cliente = new ClsCliente();
+            List<tb_cliente> list = cliente.cargarComboCliente();
+
+            foreach (var iteracion in list)
             {
-                var car = db.tb_cliente.ToList();
-
-                foreach (var iteracion in car)
-                {
-                    dgvCliente.Rows.Add(iteracion.iDCliente, iteracion.nombreCliente, iteracion.direccionCliente, iteracion.duiCliente);
-                }
+                dgvCliente.Rows.Add(iteracion.iDCliente, iteracion.nombreCliente, iteracion.direccionCliente, iteracion.duiCliente);
             }
-
         }
 
         void clear()
@@ -52,25 +48,23 @@ namespace appventas.VISTA
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            clsCliente clsclient = new clsCliente();
-
+            ClsCliente clsclient = new ClsCliente();
             tb_cliente clientList = new tb_cliente();
+
             clientList.nombreCliente = txtClientName.Text;
             clientList.direccionCliente = txtDirrecion.Text;
             clientList.duiCliente = txtDui.Text;
-
-
             clsclient.saveClient(clientList);
 
-            
+            carga();
             clear();
             
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            clsCliente deletecli = new clsCliente();
-            deletecli.delecteClient(Convert.ToInt32(txtIdClient.Text));
+            ClsCliente cliente = new ClsCliente();
+            cliente.eliminarClient(Convert.ToInt32(txtIdClient.Text));
 
             carga();
             clear();
@@ -78,14 +72,14 @@ namespace appventas.VISTA
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            clsCliente cliente = new clsCliente();
-
+            ClsCliente cliente = new ClsCliente();
             tb_cliente clientList = new tb_cliente();
+
             clientList.iDCliente = Convert.ToInt32(txtIdClient.Text);
             clientList.nombreCliente = txtClientName.Text;
             clientList.direccionCliente = txtDirrecion.Text;
             clientList.duiCliente = txtDui.Text;
-            clientList.updateClient(clientList);
+            cliente.updateClient(clientList);
 
             carga();
             clear();
@@ -105,6 +99,4 @@ namespace appventas.VISTA
             txtDui.Text = DUI;
         }
     }
-
-
 }

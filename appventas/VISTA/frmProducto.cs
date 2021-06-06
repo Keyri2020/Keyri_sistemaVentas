@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using appventas.DAO;
+using appventas.VISTA;
 
 namespace appventas.VISTA
 {
@@ -17,51 +18,61 @@ namespace appventas.VISTA
         public frmProducto()
         {
             InitializeComponent();
-            Carga();
-            clear();
+            carga();
         }
 
-        void clear()
+        void carga()
         {
-            txtIdProducto.Clear();
-            txtProductName.Clear();
-            txtPrecio.Clear();
-            txtEstadoProduct.Clear();
-
-        }
-        void Carga()
-        {
-
             dgvProducto.Rows.Clear();
-            using (sistema_ventasEntities db = new sistema_ventasEntities())
-            {
-                var product = db.tb_producto.ToList();
+            var ClsProducto = new ClsProducto();
 
-                foreach (var iteracion in product)
-                {
-                    dgvProducto.Rows.Add(iteracion.idProducto, iteracion.nombreProducto, iteracion.precioProducto, iteracion.estadoProducto);
-                }
+            foreach (var listarDatos in ClsProducto.cargarProductosFiltro(textBox1.Text))
+            {
+                dgvProducto.Rows.Add(listarDatos.idProducto, listarDatos.nombreProducto, listarDatos.precioProducto, listarDatos.estadoProducto);
             }
 
         }
 
         private void frmProducto_Load(object sender, EventArgs e)
         {
-
+        
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        void envio()
         {
-            clsProducto producto = new clsProducto();
-            tb_producto lista = new tb_producto();
-            lista.nombreProducto = txtProductName.Text;
-            lista.precioProducto = txtPrecio.Text;
-            lista.estadoProducto = txtEstadoProduct.Text;
+            String id = dgvProducto.CurrentRow.Cells[0].Value.ToString();
+            String Nombre = dgvProducto.CurrentRow.Cells[1].Value.ToString();
+            String Precio = dgvProducto.CurrentRow.Cells[2].Value.ToString();
 
-            producto.guardarDatos(lista);
+            //frmVenta frmVenta = new frmVenta();
+            //frmVenta.txtId.Text = id;
+            //frmVenta.txtNombre.Text = Nombre;
+            //frmVenta.txtPrecio.Text = Precio;
+            //frmVenta.Show();
 
-            Carga();
-            clear();
+            FrmMenú.venta.txtId.Text = id;
+            FrmMenú.venta.txtNombre.Text = Nombre;
+            FrmMenú.venta.txtPrecio.Text = Precio;
+            FrmMenú.venta.txtCantidad.Focus();
+            this.Close();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            carga();
+        }
+
+        private void dgvProducto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                envio();
+            }
+        }
+
+        private void dgvProducto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            envio();
         }
     }
 }

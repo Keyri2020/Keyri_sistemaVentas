@@ -30,28 +30,23 @@ namespace appventas.VISTA
         {
             txtIdDocument.Clear();
             txtDocumentName.Clear();
-
         }
 
         void carga()
         {
-
             dgvDocumento.Rows.Clear();
-            using (sistema_ventasEntities bd = new sistema_ventasEntities())
+            ClsDocumento documento = new ClsDocumento();
+            List<tb_documento> Lista = documento.cargarComboDocument();
+
+            foreach (var iteracion in Lista)
             {
-                var ListDocum = bd.tb_documento.ToList();
-
-                foreach (var iteracion in ListDocum)
-                {
-                    dgvDocumento.Rows.Add(iteracion.iDDocumento, iteracion.nombreDocumento);
-                }
+               dgvDocumento.Rows.Add(iteracion.iDDocumento, iteracion.nombreDocumento);
             }
-
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            clsDocumento documento = new clsDocumento();
+            ClsDocumento documento = new ClsDocumento();
             tb_documento list = new tb_documento();
             list.nombreDocumento = txtDocumentName.Text;
 
@@ -64,7 +59,7 @@ namespace appventas.VISTA
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            clsDocumento document = new clsDocumento();
+            ClsDocumento document = new ClsDocumento();
             document.eliminarDatos(Convert.ToInt32(txtIdDocument.Text));
 
             carga();
@@ -73,7 +68,7 @@ namespace appventas.VISTA
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            clsDocumento documento = new clsDocumento();
+            ClsDocumento documento = new ClsDocumento();
 
             tb_documento lista = new tb_documento();
             lista.nombreDocumento = txtDocumentName.Text;
